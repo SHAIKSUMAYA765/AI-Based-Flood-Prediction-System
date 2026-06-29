@@ -137,7 +137,7 @@ http://127.0.0.1:5000
 
   * Email: [pathanmohammed939@gmail.com](mailto:pathanmohammed939@gmail.com)
 
-* Sumaya Shaik
+*  Shaik Sumaya
 
   * Email: [shaiksumaya765@gmail.com](mailto:shaiksumaya765@gmail.com)
 
