@@ -76,7 +76,7 @@ AI-Based-Flood-Prediction-System/
 ### Clone the repository
 
 ```bash
-git clone <repository-link>
+git clone <https://github.com/SHAIKSUMAYA765/AI-Based-Flood-Prediction-System
 ```
 
 ### Navigate to the project folder
