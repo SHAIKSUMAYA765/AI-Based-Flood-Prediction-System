@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI-Based Flood Prediction System
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <span class="hero-badge">
+            🌊 AI Powered Flood Prediction
+        </span>
+
+        <h1>
+            Predict Flood Risks
+            <span>Using Artificial Intelligence</span>
+        </h1>
+
+        <p>
+            An intelligent flood prediction platform that uses
+            Machine Learning and weather parameters to estimate
+            flood risk and help support disaster preparedness.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/predict_page" class="btn-primary">
+                <i class="fas fa-brain"></i>
+                Start Prediction
+            </a>
+
+          <a href="{{ url_for('about') }}" class="btn-secondary">
+            Learn More
+           </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="hero-card">
+
+            <div class="pulse-circle"></div>
+
+            <i class="fas fa-water hero-icon"></i>
+
+            <h3>Flood Prediction AI</h3>
+
+            <p>
+                Powered by Machine Learning,
+                XGBoost and Weather Analytics.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="section-title">
+        <h2>Why Choose Our System?</h2>
+        <p>
+            Modern Machine Learning based flood prediction
+            for smarter decision making.
+        </p>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <i class="fas fa-brain"></i>
+
+            <h3>AI Powered</h3>
+
+            <p>
+                Uses Machine Learning algorithms to
+                predict flood conditions accurately.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fas fa-cloud-rain"></i>
+
+            <h3>Weather Analysis</h3>
+
+            <p>
+                Considers rainfall, humidity,
+                cloud cover and climate indicators.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fas fa-bolt"></i>
+
+            <h3>Instant Results</h3>
+
+            <p>
+                Get flood prediction outcomes
+                within seconds.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fas fa-shield-halved"></i>
+
+            <h3>Disaster Support</h3>
+
+            <p>
+                Helps raise awareness and improve
+                preparedness strategies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat-card">
+        <h2>10+</h2>
+        <p>Weather Features</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>XGBoost</h2>
+        <p>ML Model</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>Fast</h2>
+        <p>Prediction Speed</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>AI</h2>
+        <p>Powered System</p>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>
+        Ready to Predict Flood Risk?
+    </h2>
+
+    <p>
+        Use our AI model to analyze environmental
+        conditions and estimate flood probability.
+    </p>
+
+    <a href="/predict_page" class="btn-primary">
+        Start Prediction
+    </a>
+
+</section>
+
+{% endblock %}

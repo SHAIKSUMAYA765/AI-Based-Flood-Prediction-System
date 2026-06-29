@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}Flood Prediction Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="predict-page">
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="predict-top">  
+
+            <div>
+
+                <span class="page-tag">
+                    🌊 AI Powered Flood Prediction
+                </span>
+
+                <h1>Flood Prediction Dashboard</h1>
+
+                <p>
+                    Enter the weather and rainfall parameters below.
+                    Our XGBoost Machine Learning model will analyze
+                    the information and estimate the flood risk.
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('home') }}" class="home-btn">
+
+                <i class="fa-solid fa-house"></i>
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+        <!-- Dashboard -->
+
+        <div class="dashboard">
+
+            <!-- LEFT -->
+
+            <div class="form-card">
+
+                <h2>
+
+                    <i class="fa-solid fa-cloud-rain"></i>
+
+                    Prediction Form
+
+                </h2>
+                <button type="button" class="autofill-btn" onclick="fillFloodData()">
+                    Auto Fill  
+                </button>
+
+                <form action="/predict" method="POST">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Temperature (°C)</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Temp"
+                                   placeholder="Enter Temperature"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Humidity (%)</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Humidity"
+                                   placeholder="Enter Humidity"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Cloud Cover</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Cloud_Cover"
+                                   placeholder="Cloud Cover"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Annual Rainfall</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="ANNUAL"
+                                   placeholder="Annual Rainfall"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Jan-Feb Rainfall</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Jan_Feb"
+                                   placeholder="Jan-Feb"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Mar-May Rainfall</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Mar_May"
+                                   placeholder="Mar-May"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Jun-Sep Rainfall</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Jun_Sep"
+                                   placeholder="Jun-Sep"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Oct-Dec Rainfall</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Oct_Dec"
+                                   placeholder="Oct-Dec"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Average June Rainfall</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Avg_June"
+                                   placeholder="Average June"
+                                   required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Subdivision Code</label>
+
+                            <input type="number"
+                                   step="any"
+                                   name="Sub"
+                                   placeholder="Subdivision Code"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="predict-btn">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                        Predict Flood Risk
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="info-panel">
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    <h3>XGBoost AI Model</h3>
+
+                    <p>
+
+                        Trained using historical rainfall,
+                        humidity, cloud cover and temperature
+                        records.
+
+                    </p>
+
+                </div>
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <h3>Prediction Method</h3>
+
+                    <p>
+
+                        The model analyzes ten weather
+                        parameters and predicts whether
+                        flooding is likely.
+
+                    </p>
+
+                </div>
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <h3>Tips</h3>
+
+                    <ul>
+
+                        <li>Use correct rainfall values.</li>
+
+                        <li>Enter decimal values if available.</li>
+
+                        <li>Verify every field before prediction.</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

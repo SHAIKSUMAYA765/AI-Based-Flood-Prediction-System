@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}AI-Based Flood Prediction System{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css')}}">
+      
+
+    <!-- Favicon (optional for now) -->
+    <!-- <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}"> -->
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background-blur"></div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <a href="/" class="logo">
+
+                <div class="logo-circle">
+                    <i class="fas fa-water"></i>
+                </div>
+
+                <div class="logo-text">
+                    <span>Flood</span>
+                    <strong>Prediction AI</strong>
+                </div>
+
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="/">
+                        <i class="fas fa-house"></i>
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/predict_page">
+                        <i class="fas fa-brain"></i>
+                        Predict
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('about') }}">  
+                        <i class="fas fa-circle-info"></i>
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>AI-Based Flood Prediction System</h3>
+
+            <p>
+                Built using Machine Learning, Flask and XGBoost for
+                intelligent flood prediction.
+            </p>
+
+            <p>
+                © 2026 All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll Button -->
+
+    <button id="topBtn">
+
+        <i class="fas fa-arrow-up"></i>
+
+    </button>
+
+    <!-- Main JavaScript -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flood Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        body{
+            background: linear-gradient(135deg,#2b0000,#5c0000);
+            font-family: Arial, sans-serif;
+        }
+
+        .result-container{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .result-card{
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 20px;
+            text-align:center;
+            width: 400px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .result-card h1{
+            color:#ff4d4d;
+            margin-bottom:10px;
+        }
+
+        .result-card p{
+            color:#fff;
+            margin-bottom:20px;
+        }
+
+        .badge{
+            background:#ff4d4d;
+            padding:10px 20px;
+            border-radius:20px;
+            color:white;
+            display:inline-block;
+            font-weight:bold;
+        }
+
+         .btn{
+    margin-top: 20px;
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: linear-gradient(135deg,#00D4FF,#3B82F6);
+
+    color: white;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    box-shadow: 0 10px 25px rgba(0,212,255,0.25);
+
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,212,255,0.35);
+}
+.result-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding:20px;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <div class="result-card">
+
+        <h1>⚠ Flood Risk Detected</h1>
+
+        <p>High probability of flood occurrence in this region.</p>
+
+        <div class="badge">DANGER ZONE</div>
+
+        <br>
+
+        <a href="/" class="btn">Back to Home</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

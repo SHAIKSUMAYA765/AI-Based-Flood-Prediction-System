@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flood Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        body{
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg,#0f172a,#1e293b,#0b1220);
+        }
+
+        .result-container{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+       .result-card{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    padding: 40px;
+    border-radius: 20px;
+
+    text-align: center;
+
+    width: 420px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+
+    backdrop-filter: blur(15px);
+}
+
+        .result-card h1{
+            color:#00ff99;
+            margin-bottom:10px;
+        }
+
+        .result-card p{
+            color:#fff;
+            margin-bottom:20px;
+        }
+
+        .badge{
+            background:#00ff99;
+            padding:10px 20px;
+            border-radius:20px;
+            color:black;
+            display:inline-block;
+            font-weight:bold;
+        }
+
+        .btn{
+    margin-top: 20px;
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: linear-gradient(135deg,#00D4FF,#3B82F6);
+
+    color: white;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    box-shadow: 0 10px 25px rgba(0,212,255,0.25);
+
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,212,255,0.35);
+}
+.result-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding:20px;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <div class="result-card">
+
+        <h1>✅ Safe Condition</h1>
+
+        <p>No flood risk detected in this region.</p>
+
+        <div class="badge">SAFE ZONE</div>
+
+        <br>
+
+        <a href="/" class="btn">Back to Home</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
