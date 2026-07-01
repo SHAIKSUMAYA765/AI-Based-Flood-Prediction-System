@@ -45,30 +45,38 @@
 
             </a>
 
-            <ul class="nav-links">
+          <!-- Hamburger Button -->
 
-                <li>
-                    <a href="/">
-                        <i class="fas fa-house"></i>
-                        Home
-                    </a>
-                </li>
+<div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+</div>
 
-                <li>
-                    <a href="/predict_page">
-                        <i class="fas fa-brain"></i>
-                        Predict
-                    </a>
-                </li>
+<!-- Navigation Links -->
 
-                <li>
-                    <a href="{{ url_for('about') }}">  
-                        <i class="fas fa-circle-info"></i>
-                        About
-                    </a>
-                </li>
+<ul class="nav-links" id="nav-links">
 
-            </ul>
+    <li>
+        <a href="/">
+            <i class="fas fa-house"></i>
+            Home
+        </a>
+    </li>
+
+    <li>
+        <a href="/predict_page">
+            <i class="fas fa-brain"></i>
+            Predict
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ url_for('about') }}">
+            <i class="fas fa-circle-info"></i>
+            About
+        </a>
+    </li>
+
+</ul>
 
         </nav>
     </header>

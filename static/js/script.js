@@ -274,3 +274,28 @@ function fillFloodData() {
     document.querySelector('input[name="Sub"]').value = 80;
 
 }
+// =========================
+// MOBILE MENU
+// =========================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if(menuToggle){
+
+    menuToggle.addEventListener("click",()=>{
+
+        navLinks.classList.toggle("active");
+
+    });
+
+}
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
