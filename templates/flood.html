@@ -8,101 +8,242 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <style>
-        body{
-            background: linear-gradient(135deg,#2b0000,#5c0000);
-            font-family: Arial, sans-serif;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .result-container{
+        body{
+            min-height:100vh;
             display:flex;
             justify-content:center;
             align-items:center;
-            height:100vh;
+            padding:20px;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#2b0000,#5c0000,#3d0000);
+        }
+
+        .result-container{
+            width:100%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
         }
 
         .result-card{
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 40px;
-            border-radius: 20px;
+            width:100%;
+            max-width:480px;
+
+            background:rgba(255,255,255,.08);
+            border:1px solid rgba(255,255,255,.15);
+            backdrop-filter:blur(15px);
+
+            border-radius:24px;
+            padding:45px 35px;
+
             text-align:center;
-            width: 400px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+
+            box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+            transition:.3s ease;
         }
 
         .result-card h1{
             color:#ff4d4d;
-            margin-bottom:10px;
+            font-size:34px;
+            margin-bottom:15px;
         }
 
         .result-card p{
-            color:#fff;
-            margin-bottom:20px;
+            color:#ffffff;
+            font-size:18px;
+            line-height:1.8;
+            margin-bottom:25px;
         }
 
         .badge{
-            background:#ff4d4d;
-            padding:10px 20px;
-            border-radius:20px;
-            color:white;
             display:inline-block;
+            background:#ff4d4d;
+            color:#ffffff;
+            padding:12px 28px;
+            border-radius:30px;
             font-weight:bold;
+            margin-bottom:30px;
         }
 
-         .btn{
-    margin-top: 20px;
-    display: inline-block;
+        .btn{
 
-    padding: 12px 25px;
+    display:block;
 
-    background: linear-gradient(135deg,#00D4FF,#3B82F6);
+    width:100%;
 
-    color: white;
+    padding:14px;
 
-    border-radius: 12px;
+    text-decoration:none;
 
-    text-decoration: none;
+    border-radius:12px;
 
-    font-weight: 600;
+    font-weight:600;
 
-    box-shadow: 0 10px 25px rgba(0,212,255,0.25);
+    text-align:center;
 
-    transition: 0.3s ease;
+    transition:.3s;
+
+    margin-top:15px;
 }
 
-.btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,212,255,0.35);
-}
-.result-container{
+        .btn:hover{
+            transform:translateY(-3px);
+            box-shadow:0 15px 35px rgba(0,212,255,.35);
+        }
+        .button-group{
+
+    margin-top:30px;
+
     display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    padding:20px;
+
+    flex-direction:column;
+
+    gap:15px;
 }
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#00D4FF,#3B82F6);
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(0,212,255,.25);
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(0,212,255,.35);
+}
+.btn-secondary{
+
+    background:linear-gradient(135deg,#334155,#1e3a8a);
+
+    color:#ffffff;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:0 10px 25px rgba(30,58,138,.20);
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(30,58,138,.30);
+
+    background:linear-gradient(135deg,#3b4d63,#2563eb);
+}
+
+        /* ---------- Tablet ---------- */
+
+        @media (max-width:768px){
+
+            body{
+                padding:18px;
+            }
+
+            .result-card{
+                max-width:430px;
+                padding:35px 25px;
+            }
+
+            .result-card h1{
+                font-size:30px;
+            }
+
+            .result-card p{
+                font-size:16px;
+            }
+
+            .badge{
+                display:block;
+                width:100%;
+                padding:12px;
+            }
+
+        }
+
+        /* ---------- Mobile ---------- */
+
+        @media (max-width:480px){
+
+            body{
+                padding:15px;
+            }
+
+            .result-card{
+                max-width:100%;
+                padding:30px 20px;
+                border-radius:20px;
+            }
+
+            .result-card h1{
+                font-size:26px;
+            }
+
+            .result-card p{
+                font-size:15px;
+                line-height:1.7;
+            }
+
+            .badge{
+                font-size:14px;
+                padding:12px;
+            }
+
+            .btn{
+                font-size:16px;
+                padding:13px;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
-<div class="result-container">
+    <div class="result-container">
 
-    <div class="result-card">
+        <div class="result-card">
 
-        <h1>⚠ Flood Risk Detected</h1>
+            <h1>⚠ Flood Risk Detected</h1>
 
-        <p>High probability of flood occurrence in this region.</p>
+            <p>
+                High probability of flood occurrence in this region.
+            </p>
 
-        <div class="badge">DANGER ZONE</div>
+  <div class="badge">
+    DANGER ZONE
+</div>
 
-        <br>
+<div class="button-group">
 
-        <a href="/" class="btn">Back to Home</a>
+    <a href="/predict_page" class="btn btn-primary">
+        🔄 Predict Again
+    </a>
 
-    </div>
+    <a href="/" class="btn btn-secondary">
+        🏠 Back to Home
+    </a>
 
 </div>
 
+        </div>
+
+    </div>
+
 </body>
+
 </html>
